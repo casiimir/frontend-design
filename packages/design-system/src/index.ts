@@ -4,20 +4,7 @@ import DsCard from "./components/ds-card";
 import DsInput from "./components/ds-input";
 import DsProgress from "./components/ds-progress";
 import DsAvatar from "./components/ds-avatar";
-import DsDialog, {
-  DsDialogBody,
-  DsDialogClose,
-  DsDialogContent,
-  DsDialogDescription,
-  DsDialogFooter,
-  DsDialogHeader,
-  DsDialogTitle,
-  DsDialogTrigger,
-  type DsDialogCloseProps,
-  type DsDialogContentProps,
-  type DsDialogProps,
-  type DsDialogTriggerProps,
-} from "./components/ds-dialog";
+
 import DsSidebar, {
   DsSidebarTrigger,
   type DsSidebarProps,
@@ -29,22 +16,12 @@ import DsTreeItem, {
 } from "./components/ds-tree-item";
 import type { DsBadgeProps, DsBadgeStatus } from "./components/ds-badge";
 import type { DsButtonProps } from "./components/ds-button";
-import type { DsCardProps } from "./components/ds-card";
 import type { DsInputProps } from "./components/ds-input";
 import type { DsProgressProps } from "./components/ds-progress";
 import type { DsAvatarProps, DsAvatarStatus } from "./components/ds-avatar";
 
-export { DsAvatar, DsBadge, DsButton, DsCard, DsDialog, DsInput, DsProgress };
-export {
-  DsDialogBody,
-  DsDialogClose,
-  DsDialogContent,
-  DsDialogDescription,
-  DsDialogFooter,
-  DsDialogHeader,
-  DsDialogTitle,
-  DsDialogTrigger,
-};
+export { DsAvatar, DsBadge, DsButton, DsCard, DsInput, DsProgress };
+
 export { DsSidebar, DsSidebarTrigger, DsTreeItem };
 export type {
   DsAvatarProps,
@@ -52,11 +29,6 @@ export type {
   DsBadgeProps,
   DsBadgeStatus,
   DsButtonProps,
-  DsCardProps,
-  DsDialogCloseProps,
-  DsDialogContentProps,
-  DsDialogProps,
-  DsDialogTriggerProps,
   DsInputProps,
   DsProgressProps,
   DsSidebarProps,
