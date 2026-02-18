@@ -1,0 +1,36 @@
+{
+  "name": "storybook",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 6100 --ci --no-open",
+    "storybook": "pnpm dev",
+    "dev:static": "pnpm build-storybook && vite preview --outDir storybook-static --port 6100 --strictPort",
+    "build-storybook": "storybook build",
+    "check-types": "tsc --noEmit",
+    "format": "cd ../.. && pnpm exec ultracite fix apps/storybook",
+    "format:check": "cd ../.. && pnpm exec ultracite check apps/storybook"
+  },
+  "dependencies": {
+    "@workspace/design-system": "workspace:*",
+    "lucide-react": "^0.563.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@storybook/react": "8.6.17",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@storybook/addon-a11y": "8.6.17",
+    "@storybook/addon-docs": "8.6.17",
+    "@storybook/addon-essentials": "8.6.17",
+    "@storybook/react-vite": "8.6.17",
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.3",
+    "storybook": "8.6.17",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1",
+    "@workspace/typescript-config": "workspace:*"
+  }
+}

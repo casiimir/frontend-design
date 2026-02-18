@@ -10,7 +10,8 @@
       "!packages/ui",
       "!packages/eslint-config",
       "!apps/web/eslint.config.js",
-      "!apps/web/postcss.config.mjs"
+      "!apps/web/postcss.config.mjs",
+      "!apps/web/.storybook/vitest.setup.ts"
     ]
   }
 }
