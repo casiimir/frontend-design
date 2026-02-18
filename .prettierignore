@@ -1,0 +1,8 @@
+node_modules
+.turbo
+dist
+coverage
+.next
+storybook-static
+apps/web/.next
+apps/storybook/storybook-static

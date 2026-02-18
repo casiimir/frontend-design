@@ -5,15 +5,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint": "eslint app components eslint.config.js next.config.mjs postcss.config.mjs --max-warnings 0 --no-error-on-unmatched-pattern",
+    "lint:fix": "eslint app components eslint.config.js next.config.mjs postcss.config.mjs --fix --no-error-on-unmatched-pattern",
     "typecheck": "tsc --noEmit",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "format": "cd ../.. && pnpm exec ultracite fix apps/web",
+    "format:check": "cd ../.. && pnpm exec ultracite check apps/web"
   },
   "dependencies": {
+    "@workspace/design-system": "workspace:*",
     "@workspace/ui": "workspace:*",
     "lucide-react": "^0.563.0",
     "next": "16.1.6",
@@ -29,18 +30,6 @@
     "@workspace/eslint-config": "workspace:^",
     "@workspace/typescript-config": "workspace:*",
     "eslint": "^9.39.2",
-    "typescript": "^5.9.3",
-    "storybook": "^10.2.10",
-    "@storybook/nextjs-vite": "^10.2.10",
-    "@chromatic-com/storybook": "^5.0.1",
-    "@storybook/addon-vitest": "^10.2.10",
-    "@storybook/addon-a11y": "^10.2.10",
-    "@storybook/addon-docs": "^10.2.10",
-    "vite": "^7.3.1",
-    "eslint-plugin-storybook": "^10.2.10",
-    "vitest": "^4.0.18",
-    "playwright": "^1.58.2",
-    "@vitest/browser-playwright": "^4.0.18",
-    "@vitest/coverage-v8": "^4.0.18"
+    "typescript": "^5.9.3"
   }
 }

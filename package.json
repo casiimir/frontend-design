@@ -6,7 +6,11 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo test",
+    "format": "ultracite fix",
+    "format:check": "ultracite check",
+    "format:workspace": "turbo run format",
+    "format:check:workspace": "turbo run format:check",
     "check": "ultracite check",
     "fix": "ultracite fix"
   },
