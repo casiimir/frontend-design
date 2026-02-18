@@ -56,68 +56,88 @@
   --color-black: #000000;
 
   /* Brand aliases consumed by design-system components */
-  --epicode-primary-50: var(--color-linen);
-  --epicode-primary-100: var(--color-hot-pink);
-  --epicode-primary-200: var(--color-deep-pink-2);
-  --epicode-primary-300: var(--color-deep-pink-1);
-  --epicode-primary-400: var(--color-deep-pink);
-  --epicode-primary-500: var(--color-deep-pink);
-  --epicode-primary-600: var(--color-dark-orchid-1);
-  --epicode-primary-700: var(--color-midnight-blue);
+  --epicode-primary-50: #fde9f7;
+  --epicode-primary-100: #f7c6e8;
+  --epicode-primary-200: #ee99d5;
+  --epicode-primary-300: #e46cc2;
+  --epicode-primary-400: #d84ead;
+  --epicode-primary-500: #d63384;
+  --epicode-primary-600: #b02173;
+  --epicode-primary-700: #842257;
 
-  --epicode-ink-950: var(--color-dark-gray);
-  --epicode-ink-900: var(--color-charcoal);
-  --epicode-ink-800: var(--color-dark-slate-gray);
+  --epicode-ink-950: #0a0b16;
+  --epicode-ink-900: #0f1326;
+  --epicode-ink-800: #151a32;
 
-  --epicode-surface-0: var(--color-white);
-  --epicode-surface-50: var(--color-ghost-white);
-  --epicode-surface-100: var(--color-white-smoke-1);
-  --epicode-surface-200: var(--color-gainsboro);
+  --epicode-surface-0: #0c0f1d;
+  --epicode-surface-50: #101428;
+  --epicode-surface-100: #141938;
+  --epicode-surface-200: #1b2342;
 
-  --epicode-text-900: var(--color-dark-gray);
-  --epicode-text-700: var(--color-slate-gray);
-  --epicode-text-500: var(--color-dim-gray);
+  --epicode-text-900: #f0f1f3;
+  --epicode-text-700: #b3b9c9;
+  --epicode-text-500: #8f97ad;
 
-  --epicode-success: var(--color-forest-green);
-  --epicode-warning: var(--color-golden-yellow);
-  --epicode-danger: var(--color-crimson-1);
-  --epicode-info: var(--color-royal-blue);
+  --epicode-success: #22c55e;
+  --epicode-warning: #fcb900;
+  --epicode-danger: #ef4444;
+  --epicode-info: #60a5fa;
+  --epicode-primary-foreground: var(--color-white);
 
-  --epicode-border: var(--color-gainsboro);
+  /* Dark semantic tokens (default) */
+  --epicode-border: #273052;
+  --epicode-background: #0c0f1d;
+  --epicode-foreground: #f4f5fb;
+  --epicode-card: #10142b;
+  --epicode-card-foreground: #f4f5fb;
+  --epicode-muted: #121833;
+  --epicode-muted-foreground: #a2aac0;
+  --epicode-accent: #472d68;
+  --epicode-accent-foreground: var(--color-white);
 
-  /* Light semantic tokens */
-  --epicode-background: var(--epicode-surface-50);
-  --epicode-foreground: var(--epicode-text-900);
-  --epicode-card: var(--epicode-surface-0);
-  --epicode-card-foreground: var(--epicode-text-900);
-  --epicode-muted: var(--epicode-surface-100);
-  --epicode-muted-foreground: var(--epicode-text-700);
-  --epicode-accent: var(--epicode-primary-50);
-  --epicode-accent-foreground: var(--epicode-ink-950);
-
-  --epicode-sidebar-bg: var(--color-midnight-blue-1);
-  --epicode-sidebar-fg: var(--color-ghost-white);
-  --epicode-sidebar-accent: var(--color-midnight-blue);
+  --epicode-sidebar-bg: #0c0f1d;
+  --epicode-sidebar-fg: #f4f5fb;
+  --epicode-sidebar-accent: #472d68;
   --epicode-sidebar-accent-fg: var(--color-white);
-  --epicode-sidebar-border: var(--color-charcoal);
+  --epicode-sidebar-border: #2a3254;
 }
 
-/* Dark theme (bonus) */
+/* Light theme override */
+.light,
+[data-theme="light"] {
+  --epicode-border: var(--color-gainsboro);
+  --epicode-background: var(--color-ghost-white);
+  --epicode-foreground: var(--color-dark-gray);
+  --epicode-card: var(--color-white);
+  --epicode-card-foreground: var(--color-dark-gray);
+  --epicode-muted: var(--color-white-smoke-1);
+  --epicode-muted-foreground: var(--color-slate-gray);
+  --epicode-accent: var(--epicode-primary-50);
+  --epicode-accent-foreground: var(--color-dark-gray);
+
+  --epicode-sidebar-bg: var(--color-white);
+  --epicode-sidebar-fg: var(--color-dark-gray);
+  --epicode-sidebar-accent: var(--epicode-primary-50);
+  --epicode-sidebar-accent-fg: var(--color-dark-gray);
+  --epicode-sidebar-border: var(--color-gainsboro);
+}
+
+/* Explicit dark hook for theme switchers using class/data-attr */
 .dark,
 [data-theme="dark"] {
-  --epicode-background: var(--color-midnight-blue-1);
-  --epicode-foreground: var(--color-ghost-white);
-  --epicode-card: var(--color-midnight-blue);
-  --epicode-card-foreground: var(--color-ghost-white);
-  --epicode-muted: var(--color-charcoal);
-  --epicode-muted-foreground: var(--color-silver);
-  --epicode-accent: var(--color-dark-orchid-1);
+  --epicode-border: #273052;
+  --epicode-background: #0c0f1d;
+  --epicode-foreground: #f4f5fb;
+  --epicode-card: #10142b;
+  --epicode-card-foreground: #f4f5fb;
+  --epicode-muted: #121833;
+  --epicode-muted-foreground: #a2aac0;
+  --epicode-accent: #472d68;
   --epicode-accent-foreground: var(--color-white);
-  --epicode-border: var(--color-dark-slate-gray);
 
-  --epicode-sidebar-bg: var(--color-black);
-  --epicode-sidebar-fg: var(--color-white-smoke-2);
-  --epicode-sidebar-accent: var(--color-dark-gray);
+  --epicode-sidebar-bg: #0c0f1d;
+  --epicode-sidebar-fg: #f4f5fb;
+  --epicode-sidebar-accent: #472d68;
   --epicode-sidebar-accent-fg: var(--color-white);
-  --epicode-sidebar-border: var(--color-charcoal);
+  --epicode-sidebar-border: #2a3254;
 }

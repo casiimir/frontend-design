@@ -28,10 +28,10 @@
   --text-2xl--line-height: var(--epicode-leading-2xl);
 
   --color-epicode-primary: var(--epicode-primary-500);
-  --color-epicode-primary-foreground: var(--epicode-ink-950);
+  --color-epicode-primary-foreground: var(--epicode-primary-foreground);
   --color-epicode-ink: var(--epicode-ink-950);
   --color-epicode-foreground: var(--epicode-foreground);
-  --color-epicode-surface: var(--epicode-surface-0);
+  --color-epicode-surface: var(--epicode-card);
   --color-epicode-muted: var(--epicode-muted);
   --color-epicode-border: var(--epicode-border);
   --color-epicode-success: var(--epicode-success);
@@ -76,9 +76,9 @@
   --popover: var(--epicode-card);
   --popover-foreground: var(--epicode-card-foreground);
   --primary: var(--epicode-primary-500);
-  --primary-foreground: var(--epicode-ink-950);
-  --secondary: var(--epicode-surface-100);
-  --secondary-foreground: var(--epicode-text-900);
+  --primary-foreground: var(--epicode-primary-foreground);
+  --secondary: var(--epicode-muted);
+  --secondary-foreground: var(--epicode-foreground);
   --muted: var(--epicode-muted);
   --muted-foreground: var(--epicode-muted-foreground);
   --accent: var(--epicode-accent);
@@ -92,7 +92,7 @@
   --sidebar: var(--epicode-sidebar-bg);
   --sidebar-foreground: var(--epicode-sidebar-fg);
   --sidebar-primary: var(--epicode-primary-500);
-  --sidebar-primary-foreground: var(--epicode-ink-950);
+  --sidebar-primary-foreground: var(--epicode-primary-foreground);
   --sidebar-accent: var(--epicode-sidebar-accent);
   --sidebar-accent-foreground: var(--epicode-sidebar-accent-fg);
   --sidebar-border: var(--epicode-sidebar-border);
