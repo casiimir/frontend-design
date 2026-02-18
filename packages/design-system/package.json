@@ -1,10 +1,42 @@
 {
   "name": "@workspace/design-system",
   "version": "0.0.0",
-  "private": true,
   "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit",
+    "test": "vitest run",
+    "format": "cd ../.. && pnpm exec ultracite fix packages/design-system",
+    "format:check": "cd ../.. && pnpm exec ultracite check packages/design-system"
+  },
+  "dependencies": {
+    "@workspace/ui": "workspace:*",
+    "class-variance-authority": "^0.7.1",
+    "lucide-react": "^0.563.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^25.1.0",
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.3",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
+    "eslint": "^9.39.2",
+    "jsdom": "^26.1.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
   "exports": {
+    ".": "./src/index.ts",
     "./globals.css": "./src/styles/globals.css",
-    "./tokens/*": "./src/tokens/*.css"
+    "./tokens/*": "./src/tokens/*.css",
+    "./components/*": "./src/components/*.tsx",
+    "./lib/*": "./src/lib/*.ts"
   }
 }
