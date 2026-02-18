@@ -4,6 +4,15 @@ import DsCard from "./components/ds-card";
 import DsInput from "./components/ds-input";
 import DsProgress from "./components/ds-progress";
 import DsAvatar from "./components/ds-avatar";
+import DsTooltip, {
+  DsTooltipContent,
+  DsTooltipProvider,
+  DsTooltipTrigger,
+  type DsTooltipContentProps,
+  type DsTooltipProps,
+  type DsTooltipProviderProps,
+  type DsTooltipTriggerProps,
+} from "./components/ds-tooltip";
 import DsDialog, {
   DsDialogBody,
   DsDialogClose,
@@ -34,7 +43,16 @@ import type { DsInputProps } from "./components/ds-input";
 import type { DsProgressProps } from "./components/ds-progress";
 import type { DsAvatarProps, DsAvatarStatus } from "./components/ds-avatar";
 
-export { DsAvatar, DsBadge, DsButton, DsCard, DsDialog, DsInput, DsProgress };
+export {
+  DsAvatar,
+  DsBadge,
+  DsButton,
+  DsCard,
+  DsDialog,
+  DsInput,
+  DsProgress,
+  DsTooltip,
+};
 export {
   DsDialogBody,
   DsDialogClose,
@@ -44,6 +62,9 @@ export {
   DsDialogHeader,
   DsDialogTitle,
   DsDialogTrigger,
+  DsTooltipContent,
+  DsTooltipProvider,
+  DsTooltipTrigger,
 };
 export { DsSidebar, DsSidebarTrigger, DsTreeItem };
 export type {
@@ -59,6 +80,10 @@ export type {
   DsDialogTriggerProps,
   DsInputProps,
   DsProgressProps,
+  DsTooltipContentProps,
+  DsTooltipProps,
+  DsTooltipProviderProps,
+  DsTooltipTriggerProps,
   DsSidebarProps,
   DsTreeItemProps,
   DsTreeItemStatus,
