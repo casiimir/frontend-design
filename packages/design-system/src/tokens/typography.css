@@ -1,22 +1,67 @@
-/* Generic typos - TODO: Apply EPICODE right one */
 :root {
-  --epicode-font-sans: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --epicode-font-display: "Outfit", "Inter", "Segoe UI", sans-serif;
+  /* Font families */
+  --font-inter: "Inter", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+  --font-apple-system: -apple-system, sans-serif;
+
+  /* Font sizes */
+  --text-14: 14px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-24: 24px;
+  --text-31: 31px;
+  --text-32: 32px;
+  --text-48: 48px;
+  --text-52: 52px;
+  --text-54: 54px;
+  --text-60: 60px;
+  --text-84: 84px;
+
+  /* Font weights */
+  --font-300: 300;
+  --font-400: 400;
+  --font-500: 500;
+  --font-600: 600;
+  --font-700: 700;
+
+  /* Line heights */
+  --leading-19-2: 19.2px;
+  --leading-20: 20px;
+  --leading-21-6: 21.6px;
+  --leading-22: 22px;
+  --leading-23-8: 23.8px;
+  --leading-24: 24px;
+  --leading-26-4: 26.4px;
+  --leading-31-2: 31.2px;
+  --leading-32: 32px;
+  --leading-33-6: 33.6px;
+  --leading-38: 38px;
+  --leading-48: 48px;
+  --leading-52: 52px;
+  --leading-52-8: 52.8px;
+  --leading-54: 54px;
+  --leading-60: 60px;
+  --leading-70: 70px;
+  --leading-80: 80px;
+
+  /* Design-system aliases consumed by Tailwind theme mapping */
+  --epicode-font-sans: var(--font-inter);
+  --epicode-font-display: var(--font-outfit);
   --epicode-font-mono:
     "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
-  /* Typography scale */
-  --epicode-text-xs: 0.75rem;
-  --epicode-text-sm: 0.875rem;
-  --epicode-text-md: 1rem;
-  --epicode-text-lg: 1.125rem;
-  --epicode-text-xl: 1.25rem;
-  --epicode-text-2xl: 1.5rem;
+  --epicode-text-xs: var(--text-14);
+  --epicode-text-sm: var(--text-16);
+  --epicode-text-md: var(--text-18);
+  --epicode-text-lg: var(--text-20);
+  --epicode-text-xl: var(--text-24);
+  --epicode-text-2xl: var(--text-32);
 
-  --epicode-leading-xs: 1rem;
-  --epicode-leading-sm: 1.25rem;
-  --epicode-leading-md: 1.5rem;
-  --epicode-leading-lg: 1.75rem;
-  --epicode-leading-xl: 1.875rem;
-  --epicode-leading-2xl: 2rem;
+  --epicode-leading-xs: var(--leading-20);
+  --epicode-leading-sm: var(--leading-24);
+  --epicode-leading-md: var(--leading-26-4);
+  --epicode-leading-lg: var(--leading-31-2);
+  --epicode-leading-xl: var(--leading-32);
+  --epicode-leading-2xl: var(--leading-38);
 }
