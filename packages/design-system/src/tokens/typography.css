@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap");
+
+/* Generic typos - TODO: Apply EPICODE right one */
+:root {
+  --epicode-font-sans: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --epicode-font-display: "Outfit", "Inter", "Segoe UI", sans-serif;
+  --epicode-font-mono:
+    "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  /* Typography scale */
+  --epicode-text-xs: 0.75rem;
+  --epicode-text-sm: 0.875rem;
+  --epicode-text-md: 1rem;
+  --epicode-text-lg: 1.125rem;
+  --epicode-text-xl: 1.25rem;
+  --epicode-text-2xl: 1.5rem;
+
+  --epicode-leading-xs: 1rem;
+  --epicode-leading-sm: 1.25rem;
+  --epicode-leading-md: 1.5rem;
+  --epicode-leading-lg: 1.75rem;
+  --epicode-leading-xl: 1.875rem;
+  --epicode-leading-2xl: 2rem;
+}

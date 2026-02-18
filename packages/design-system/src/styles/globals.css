@@ -1,0 +1,83 @@
+@import "@workspace/ui/globals.css";
+@import "../tokens/colors.css";
+@import "../tokens/typography.css";
+
+@theme inline {
+  --font-sans: var(--epicode-font-sans);
+  --font-display: var(--epicode-font-display);
+  --font-mono: var(--epicode-font-mono);
+
+  --text-xs: var(--epicode-text-xs);
+  --text-xs--line-height: var(--epicode-leading-xs);
+  --text-sm: var(--epicode-text-sm);
+  --text-sm--line-height: var(--epicode-leading-sm);
+  --text-base: var(--epicode-text-md);
+  --text-base--line-height: var(--epicode-leading-md);
+  --text-lg: var(--epicode-text-lg);
+  --text-lg--line-height: var(--epicode-leading-lg);
+  --text-xl: var(--epicode-text-xl);
+  --text-xl--line-height: var(--epicode-leading-xl);
+  --text-2xl: var(--epicode-text-2xl);
+  --text-2xl--line-height: var(--epicode-leading-2xl);
+
+  --color-epicode-primary: var(--epicode-primary-500);
+  --color-epicode-primary-foreground: var(--epicode-ink-950);
+  --color-epicode-foreground: var(--epicode-foreground);
+  --color-epicode-surface: var(--epicode-surface-0);
+  --color-epicode-muted: var(--epicode-muted);
+  --color-epicode-border: var(--epicode-border);
+  --color-epicode-success: var(--epicode-success);
+  --color-epicode-warning: var(--epicode-warning);
+  --color-epicode-danger: var(--epicode-danger);
+  --color-epicode-info: var(--epicode-info);
+}
+
+:root {
+  --background: var(--epicode-background);
+  --foreground: var(--epicode-foreground);
+  --card: var(--epicode-card);
+  --card-foreground: var(--epicode-card-foreground);
+  --popover: var(--epicode-card);
+  --popover-foreground: var(--epicode-card-foreground);
+  --primary: var(--epicode-primary-500);
+  --primary-foreground: var(--epicode-ink-950);
+  --secondary: var(--epicode-surface-100);
+  --secondary-foreground: var(--epicode-text-900);
+  --muted: var(--epicode-muted);
+  --muted-foreground: var(--epicode-muted-foreground);
+  --accent: var(--epicode-accent);
+  --accent-foreground: var(--epicode-accent-foreground);
+  --destructive: var(--epicode-danger);
+  --destructive-foreground: #ffffff;
+  --border: var(--epicode-border);
+  --input: var(--epicode-border);
+  --ring: var(--epicode-primary-500);
+
+  --sidebar: var(--epicode-sidebar-bg);
+  --sidebar-foreground: var(--epicode-sidebar-fg);
+  --sidebar-primary: var(--epicode-primary-500);
+  --sidebar-primary-foreground: var(--epicode-ink-950);
+  --sidebar-accent: var(--epicode-sidebar-accent);
+  --sidebar-accent-foreground: var(--epicode-sidebar-accent-fg);
+  --sidebar-border: var(--epicode-sidebar-border);
+  --sidebar-ring: var(--epicode-primary-500);
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--epicode-font-sans);
+    color: var(--foreground);
+    background-color: var(--background);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--epicode-font-display);
+    letter-spacing: -0.01em;
+  }
+}

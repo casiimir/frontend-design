@@ -1,0 +1,67 @@
+:root {
+  /* Generic brand palette - TODO: Apply EPICODE right one */
+  --epicode-primary-50: #fff8e1;
+  --epicode-primary-100: #ffefbc;
+  --epicode-primary-200: #ffe284;
+  --epicode-primary-300: #ffd44a;
+  --epicode-primary-400: #ffc52a;
+  --epicode-primary-500: #d60176;
+  --epicode-primary-600: #dd9f00;
+  --epicode-primary-700: #b88300;
+
+  --epicode-ink-950: #111827;
+  --epicode-ink-900: #1b2233;
+  --epicode-ink-800: #2c354a;
+
+  --epicode-surface-0: #ffffff;
+  --epicode-surface-50: #f7f9fc;
+  --epicode-surface-100: #eef2f8;
+  --epicode-surface-200: #dfe6f1;
+
+  --epicode-text-900: #1c2436;
+  --epicode-text-700: #44506a;
+  --epicode-text-500: #67738c;
+
+  --epicode-success: #1ea672;
+  --epicode-warning: #e2a100;
+  --epicode-danger: #d94f4f;
+  --epicode-info: #00a5c8;
+
+  --epicode-border: #d7deea;
+
+  /* Light semantic tokens (required) */
+  --epicode-background: var(--epicode-surface-50);
+  --epicode-foreground: var(--epicode-text-900);
+  --epicode-card: var(--epicode-surface-0);
+  --epicode-card-foreground: var(--epicode-text-900);
+  --epicode-muted: var(--epicode-surface-100);
+  --epicode-muted-foreground: var(--epicode-text-500);
+  --epicode-accent: var(--epicode-primary-100);
+  --epicode-accent-foreground: var(--epicode-ink-950);
+
+  --epicode-sidebar-bg: var(--epicode-ink-950);
+  --epicode-sidebar-fg: #eaf0fb;
+  --epicode-sidebar-accent: #1d2740;
+  --epicode-sidebar-accent-fg: #f4f7fd;
+  --epicode-sidebar-border: #273252;
+}
+
+/* Dark theme (bonus) */
+.dark,
+[data-theme="dark"] {
+  --epicode-background: #0f1524;
+  --epicode-foreground: #e8edf6;
+  --epicode-card: #161f31;
+  --epicode-card-foreground: #e8edf6;
+  --epicode-muted: #1b2538;
+  --epicode-muted-foreground: #a8b4cb;
+  --epicode-accent: #202c42;
+  --epicode-accent-foreground: #f2f5fb;
+  --epicode-border: #2a3954;
+
+  --epicode-sidebar-bg: #0d1322;
+  --epicode-sidebar-fg: #ecf1fa;
+  --epicode-sidebar-accent: #1a243c;
+  --epicode-sidebar-accent-fg: #f4f7fc;
+  --epicode-sidebar-border: #253252;
+}
