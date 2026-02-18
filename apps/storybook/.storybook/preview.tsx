@@ -21,8 +21,8 @@ const preview: Preview = {
     backgrounds: {
       default: "epicode-dark",
       values: [
-        { name: "epicode-dark", value: "#111827" },
-        { name: "epicode-light", value: "#f7f9fc" },
+        { name: "epicode-dark", value: "#0c0f1d" },
+        { name: "epicode-light", value: "#f8f9fa" },
       ],
     },
     docs: {
