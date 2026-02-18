@@ -16,6 +16,7 @@ import DsTreeItem, {
 } from "./components/ds-tree-item";
 import type { DsBadgeProps, DsBadgeStatus } from "./components/ds-badge";
 import type { DsButtonProps } from "./components/ds-button";
+import type { DsCardProps } from "./components/ds-card";
 import type { DsInputProps } from "./components/ds-input";
 import type { DsProgressProps } from "./components/ds-progress";
 import type { DsAvatarProps, DsAvatarStatus } from "./components/ds-avatar";
@@ -29,6 +30,7 @@ export type {
   DsBadgeProps,
   DsBadgeStatus,
   DsButtonProps,
+  DsCardProps,
   DsInputProps,
   DsProgressProps,
   DsSidebarProps,
