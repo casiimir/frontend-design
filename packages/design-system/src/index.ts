@@ -4,6 +4,7 @@ import DsCard from "./components/ds-card";
 import DsInput from "./components/ds-input";
 import DsProgress from "./components/ds-progress";
 import DsAvatar from "./components/ds-avatar";
+import DsChatBubble from "./components/ds-chat-bubble";
 import DsTooltip, {
   DsTooltipContent,
   DsTooltipProvider,
@@ -42,12 +43,14 @@ import type { DsCardProps } from "./components/ds-card";
 import type { DsInputProps } from "./components/ds-input";
 import type { DsProgressProps } from "./components/ds-progress";
 import type { DsAvatarProps, DsAvatarStatus } from "./components/ds-avatar";
+import type { DsChatBubbleProps } from "./components/ds-chat-bubble";
 
 export {
   DsAvatar,
   DsBadge,
   DsButton,
   DsCard,
+  DsChatBubble,
   DsDialog,
   DsInput,
   DsProgress,
@@ -74,6 +77,7 @@ export type {
   DsBadgeStatus,
   DsButtonProps,
   DsCardProps,
+  DsChatBubbleProps,
   DsDialogCloseProps,
   DsDialogContentProps,
   DsDialogProps,
