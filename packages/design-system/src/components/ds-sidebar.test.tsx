@@ -58,7 +58,9 @@ describe("DsSidebar", () => {
     fireEvent.click(screen.getByRole("button", { name: LESSON_LABEL }));
 
     expect(onItemSelect).toHaveBeenCalledTimes(1);
-    expect(onItemSelect.mock.calls[0][0]).toMatchObject({ id: "lesson-2" });
+    expect(onItemSelect).toHaveBeenCalledWith(
+      expect.objectContaining({ id: "lesson-2" })
+    );
   });
 
   it("marks clicked lesson as active when uncontrolled", () => {

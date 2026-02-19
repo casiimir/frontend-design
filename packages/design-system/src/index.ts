@@ -5,6 +5,7 @@ import DsInput from "./components/ds-input";
 import DsProgress from "./components/ds-progress";
 import DsAvatar from "./components/ds-avatar";
 import DsChatBubble from "./components/ds-chat-bubble";
+import DsChatInput from "./components/ds-chat-input";
 import DsTooltip, {
   DsTooltipContent,
   DsTooltipProvider,
@@ -44,6 +45,11 @@ import type { DsInputProps } from "./components/ds-input";
 import type { DsProgressProps } from "./components/ds-progress";
 import type { DsAvatarProps, DsAvatarStatus } from "./components/ds-avatar";
 import type { DsChatBubbleProps } from "./components/ds-chat-bubble";
+import type {
+  DsChatInputAttachment,
+  DsChatInputProps,
+  DsChatInputSendPayload,
+} from "./components/ds-chat-input";
 
 export {
   DsAvatar,
@@ -51,6 +57,7 @@ export {
   DsButton,
   DsCard,
   DsChatBubble,
+  DsChatInput,
   DsDialog,
   DsInput,
   DsProgress,
@@ -78,6 +85,9 @@ export type {
   DsButtonProps,
   DsCardProps,
   DsChatBubbleProps,
+  DsChatInputAttachment,
+  DsChatInputProps,
+  DsChatInputSendPayload,
   DsDialogCloseProps,
   DsDialogContentProps,
   DsDialogProps,
