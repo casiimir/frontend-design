@@ -25,15 +25,15 @@ import {
   SearchIcon,
   UserIcon,
 } from "lucide-react";
-import { useMemo, useState, type CSSProperties } from "react";
+import { type CSSProperties, useMemo, useState } from "react";
 import {
-  mockChatMessages,
-  mockCourse,
-  mockSidebarExtraModules,
   type Course,
   type Lesson,
   type LessonStatus,
   type LessonType,
+  mockChatMessages,
+  mockCourse,
+  mockSidebarExtraModules,
 } from "@/lib/mock-data";
 
 type LessonSectionKey = "video" | "theory" | "quiz";
@@ -50,7 +50,10 @@ const LESSON_GROUP_TITLES: Record<string, string> = {
   "m1-excel": "Business intelligence",
 };
 
-const LESSON_SECTIONS: Record<LessonSectionKey, { idSuffix: string; label: string }> = {
+const LESSON_SECTIONS: Record<
+  LessonSectionKey,
+  { idSuffix: string; label: string }
+> = {
   video: {
     idSuffix: "video",
     label: "Video",
@@ -132,7 +135,8 @@ function buildSidebarItems(course: Course): DsTreeNode[] {
     );
 
     const moduleStatus = getAggregateStatus(module.lessons);
-    const lessonGroupTitle = LESSON_GROUP_TITLES[module.id] ?? "Percorso didattico";
+    const lessonGroupTitle =
+      LESSON_GROUP_TITLES[module.id] ?? "Percorso didattico";
 
     const sectionNodes = Object.entries(LESSON_SECTIONS).reduce<DsTreeNode[]>(
       (accumulator, [sectionKey, sectionConfig]) => {
@@ -211,7 +215,10 @@ function getLessonBody(lesson: LessonWithContext): string[] {
     ],
   };
 
-  return [lesson.content ?? "Contenuto lezione non disponibile.", ...typeCopy[lesson.type]];
+  return [
+    lesson.content ?? "Contenuto lezione non disponibile.",
+    ...typeCopy[lesson.type],
+  ];
 }
 
 export function LmsScreen() {
@@ -245,10 +252,13 @@ export function LmsScreen() {
 
   const lessonById = useMemo(
     () =>
-      lessons.reduce<Record<string, LessonWithContext>>((accumulator, lesson) => {
-        accumulator[lesson.id] = lesson;
-        return accumulator;
-      }, {}),
+      lessons.reduce<Record<string, LessonWithContext>>(
+        (accumulator, lesson) => {
+          accumulator[lesson.id] = lesson;
+          return accumulator;
+        },
+        {}
+      ),
     [lessons]
   );
 
@@ -286,7 +296,9 @@ export function LmsScreen() {
       ? ((completedCount + inProgressCount * 0.5) / lessons.length) * 100
       : 0;
 
-  const activeIndex = lessons.findIndex((lesson) => lesson.id === activeLesson.id);
+  const activeIndex = lessons.findIndex(
+    (lesson) => lesson.id === activeLesson.id
+  );
   const previousLesson = activeIndex > 0 ? lessons[activeIndex - 1] : undefined;
   const nextLesson =
     activeIndex >= 0 && activeIndex < lessons.length - 1
@@ -324,8 +336,8 @@ export function LmsScreen() {
   }
 
   return (
-    <div className="min-h-svh bg-[linear-gradient(180deg,#060919_0%,#070c1f_40%,#050716_100%)] text-epicode-foreground">
-      <div className="flex min-h-svh">
+    <div className="h-svh overflow-hidden bg-[linear-gradient(180deg,#060919_0%,#070c1f_40%,#050716_100%)] text-epicode-foreground">
+      <div className="flex h-full">
         <DsSidebar
           activeItemId={activeLesson.id}
           expandedItemIds={expandedItemIds}
@@ -342,7 +354,7 @@ export function LmsScreen() {
         />
 
         <div className="flex min-w-0 flex-1">
-          <main className="flex min-w-0 flex-1 overflow-y-auto px-4 py-5 md:px-8 bg-epicode-ink">
+          <main className="flex h-full min-w-0 flex-1 overflow-y-auto bg-epicode-ink px-4 py-5 md:px-8">
             <div className="mx-8 flex w-full flex-1 flex-col gap-4">
               <header className="flex flex-wrap items-center justify-between gap-3">
                 <div className="relative w-full max-w-md bg-black">
@@ -379,12 +391,14 @@ export function LmsScreen() {
 
               <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg bg-epicode-ink/35 px-3 py-2.500">
                 <div className="min-w-0">
-                  <p className="truncate font-medium text-sm text-epicode-foreground/95">
-                    {mockCourse.title} &gt; {activeModule?.title ?? mockCourse.title} &gt; {activeLesson.title}
+                  <p className="truncate font-medium text-epicode-foreground/95 text-sm">
+                    {mockCourse.title} &gt;{" "}
+                    {activeModule?.title ?? mockCourse.title} &gt;{" "}
+                    {activeLesson.title}
                   </p>
                 </div>
 
-                <div className="w-full max-w-[240px] min-w-[180px]">
+                <div className="w-full min-w-[180px] max-w-[240px]">
                   <DsProgress
                     label={`${Math.round(progressValue)}% complete`}
                     showPercentage={false}
@@ -396,34 +410,33 @@ export function LmsScreen() {
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <h1 className="font-display text-[2.5rem] font-semibold tracking-tight leading-none mt-6 mb-2">
+                <h1 className="mt-6 mb-2 font-display font-semibold text-[2.5rem] leading-none tracking-tight">
                   {activeLesson.title}
                 </h1>
                 <DsBadge status={activeLesson.status} />
               </div>
 
               <DsCard
-                className="overflow-hidden border-0 ring-0 bg-transparent shadow-none"
+                className="overflow-hidden border-0 bg-transparent shadow-none ring-0"
                 contentClassName="space-y-4"
                 variant="lesson"
               >
                 <div className="relative overflow-hidden bg-[#141b43] p-6 md:p-10">
                   <div className="relative flex min-h-[340px] flex-col justify-between md:min-h-[470px]">
                     <div className="flex items-center justify-between gap-3">
-                      <div className="inline-flex items-center gap-3 rounded-sm bg-transparent px-1 py-0.5 text-white">
-                      </div>
+                      <div className="inline-flex items-center gap-3 rounded-sm bg-transparent px-1 py-0.5 text-white" />
                       <div className="inline-flex h-9 items-center rounded-md border border-white/35 bg-white px-4 font-medium text-[13px] text-epicode-ink">
                         {activeLesson.title}
                       </div>
                     </div>
 
-                    <h2 className="max-w-xl font-display text-5xl font-semibold text-white leading-[1.08] md:text-[3.25rem]">
+                    <h2 className="max-w-xl font-display font-semibold text-5xl text-white leading-[1.08] md:text-[3.25rem]">
                       Contenuto della lezione
                     </h2>
                   </div>
                 </div>
 
-                <article className="space-y-3 text-sm text-epicode-muted-foreground leading-7">
+                <article className="space-y-3 text-epicode-muted-foreground text-sm leading-7">
                   {lessonBody.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -460,64 +473,80 @@ export function LmsScreen() {
             </div>
           </main>
 
-          {chatPanelOpen ? (
-            <aside className="hidden h-svh w-[286px] shrink-0 border-l border-epicode-sidebar-border/95 bg-epicode-sidebar-bg xl:flex xl:flex-col">
-              <header className="flex items-center justify-between border-b border-epicode-sidebar-border/90 px-3 py-3">
-                <div className="flex items-center gap-2 font-display text-sm font-semibold tracking-tight">
-                  <MessageSquareIcon className="size-4 text-epicode-primary" />
-                  <span>Comments</span>
+          <aside
+            className={[
+              "sticky top-0 hidden h-full shrink-0 overflow-hidden border-epicode-sidebar-border/95 border-l bg-epicode-sidebar-bg transition-[width] duration-300 ease-out xl:flex xl:flex-col",
+              chatPanelOpen ? "w-[286px]" : "w-10",
+            ].join(" ")}
+          >
+            {chatPanelOpen ? (
+              <>
+                <header className="flex items-center justify-between border-epicode-sidebar-border/90 border-b px-3 py-3">
+                  <div className="flex items-center gap-2 font-display font-semibold text-sm tracking-tight">
+                    <MessageSquareIcon className="size-4 text-epicode-primary" />
+                    <span>Comments</span>
+                  </div>
+                  <DsButton
+                    aria-label="Collapse comments panel"
+                    className="h-7 w-7 px-0"
+                    icon={<ChevronRightIcon className="size-4" />}
+                    onClick={() => setChatPanelOpen(false)}
+                    variant="ghost"
+                  />
+                </header>
+
+                <div className="flex-1 space-y-2 overflow-y-auto px-3 py-3">
+                  {chatMessages.map((chatMessage) => (
+                    <DsChatBubble
+                      avatar={
+                        chatMessage.variant === "assistant" ? (
+                          <DsAvatar
+                            fallback="AI"
+                            showStatus
+                            size="sm"
+                            status="online"
+                          />
+                        ) : (
+                          <DsAvatar
+                            fallback="ME"
+                            showStatus={false}
+                            size="sm"
+                          />
+                        )
+                      }
+                      key={chatMessage.id}
+                      message={chatMessage.message}
+                      timestamp={chatMessage.timestamp}
+                      variant={chatMessage.variant}
+                    />
+                  ))}
                 </div>
+
+                <div className="border-epicode-sidebar-border/90 border-t p-3">
+                  <DsChatInput
+                    allowAttachments={false}
+                    className="rounded-lg border-none bg-transparent p-3 shadow-none"
+                    onSend={handleChatSend}
+                    placeholder="Leave a comment..."
+                    rows={6}
+                    sendLabel="Submit"
+                    size="sm"
+                    textareaClassName="min-h-[148px] rounded-lg border-epicode-border/80 bg-epicode-ink/35"
+                  />
+                </div>
+              </>
+            ) : (
+              <div className="flex h-full items-start justify-center pt-3">
                 <DsButton
-                  aria-label="Collapse comments panel"
+                  aria-label="Open comments panel"
                   className="h-7 w-7 px-0"
-                  icon={<ChevronRightIcon className="size-4" />}
-                  onClick={() => setChatPanelOpen(false)}
+                  icon={<ChevronLeftIcon className="size-4" />}
+                  onClick={() => setChatPanelOpen(true)}
                   variant="ghost"
                 />
-              </header>
-
-              <div className="flex-1 space-y-2 overflow-y-auto px-3 py-3">
-                {chatMessages.map((chatMessage) => (
-                  <DsChatBubble
-                    avatar={
-                      chatMessage.variant === "assistant" ? (
-                        <DsAvatar fallback="AI" showStatus size="sm" status="online" />
-                      ) : (
-                        <DsAvatar fallback="ME" showStatus={false} size="sm" />
-                      )
-                    }
-                    key={chatMessage.id}
-                    message={chatMessage.message}
-                    timestamp={chatMessage.timestamp}
-                    variant={chatMessage.variant}
-                  />
-                ))}
               </div>
-
-              <div className="border-t border-epicode-sidebar-border/90 p-3">
-                <DsChatInput
-                  allowAttachments={false}
-                  className="rounded-lg border-epicode-border/80 bg-transparent p-0 shadow-none"
-                  onSend={handleChatSend}
-                  placeholder="Leave a comment..."
-                  rows={6}
-                  sendLabel="Submit"
-                  size="sm"
-                  textareaClassName="min-h-[148px] rounded-lg border-epicode-border/80 bg-epicode-ink/35"
-                />
-              </div>
-            </aside>
-          ) : (
-            <aside className="hidden h-svh w-10 shrink-0 items-start justify-center border-l border-epicode-sidebar-border/95 bg-epicode-sidebar-bg pt-3 xl:flex">
-              <DsButton
-                aria-label="Open comments panel"
-                className="h-7 w-7 px-0"
-                icon={<ChevronLeftIcon className="size-4" />}
-                onClick={() => setChatPanelOpen(true)}
-                variant="ghost"
-              />
-            </aside>
-          )}
+            )}
+          </aside>
         </div>
       </div>
     </div>
