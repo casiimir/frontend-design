@@ -1,15 +1,13 @@
-import { Button } from "@workspace/ui/components/button"
+import { LmsScreen } from "@/components/lms-screen";
+import { resolveLocale } from "@/lib/i18n";
 
-export default function Page() {
-  return (
-    <div className="flex items-center justify-center min-h-svh">
-      <div className="flex flex-col items-center justify-center gap-4">
-        <h1 className="text-2xl font-bold">Hello World</h1>
-        <div className="flex gap-2">
-          <Button>Button</Button>
-          <Button variant="outline">Outline</Button>
-        </div>
-      </div>
-    </div>
-  )
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: Promise<{ lang?: string }>;
+}) {
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
+  const locale = resolveLocale(resolvedSearchParams?.lang);
+
+  return <LmsScreen locale={locale} />;
 }

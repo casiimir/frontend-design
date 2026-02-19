@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": [
+    "ultracite/biome/core",
+    "ultracite/biome/react",
+    "ultracite/biome/next"
+  ],
+  "files": {
+    "includes": [
+      "!packages/ui",
+      "!packages/eslint-config",
+      "!packages/design-system/src/index.ts",
+      "!apps/web/eslint.config.js",
+      "!apps/web/postcss.config.mjs",
+      "!apps/web/.storybook/vitest.setup.ts"
+    ]
+  }
+}

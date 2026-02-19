@@ -5,13 +5,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "typecheck": "tsc --noEmit"
+    "lint": "eslint app components eslint.config.js next.config.mjs postcss.config.mjs --max-warnings 0 --no-error-on-unmatched-pattern",
+    "lint:fix": "eslint app components eslint.config.js next.config.mjs postcss.config.mjs --fix --no-error-on-unmatched-pattern",
+    "typecheck": "tsc --noEmit",
+    "format": "cd ../.. && pnpm exec ultracite fix apps/web",
+    "format:check": "cd ../.. && pnpm exec ultracite check apps/web"
   },
   "dependencies": {
+    "@workspace/design-system": "workspace:*",
     "@workspace/ui": "workspace:*",
     "lucide-react": "^0.563.0",
     "next": "16.1.6",

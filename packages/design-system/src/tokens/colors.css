@@ -1,0 +1,143 @@
+:root {
+  /* Extracted primitives from epicode.com */
+  --color-white: #ffffff;
+  --color-white-smoke: #eeeeee;
+  --color-white-smoke-1: #f0f1f3;
+  --color-white-smoke-2: #f7f7f7;
+  --color-ghost-white: #f8f9fa;
+  --color-old-lace: #fff5cb;
+  --color-linen: #ffceec;
+  --color-light-gray: #cccccc;
+  --color-gainsboro: #dee2e6;
+  --color-wheat: #fecda5;
+  --color-light-steel-blue: #c7c1ff;
+  --color-silver: #abb8c3;
+  --color-khaki: #ffd46a;
+  --color-khaki-1: #ffcb70;
+  --color-khaki-2: #caf880;
+  --color-hot-pink: #f78da7;
+  --color-sky-blue: #8ed1fc;
+  --color-light-green: #7bdcb5;
+  --color-light-green-1: #7adcb4;
+  --color-medium-purple: #9b51e0;
+  --color-medium-purple-1: #8c52ff;
+  --color-turquoise: #4aeadc;
+  --color-royal-blue: #0d6efd;
+  --color-royal-blue-1: #6a53ff;
+  --color-royal-blue-2: #6953ff;
+  --color-royal-blue-3: #6b53ff;
+  --color-blue-violet: #694aff;
+  --color-blue-violet-1: #6610f2;
+  --color-dark-orchid: #7952b3;
+  --color-dark-orchid-1: #6f42c1;
+  --color-crimson: #cf2e2e;
+  --color-crimson-1: #dc3545;
+  --color-deep-pink: #d60076;
+  --color-deep-pink-1: #d50075;
+  --color-deep-pink-2: #d63384;
+  --color-dark-turquoise: #0693e3;
+  --color-dark-turquoise-1: #0dcaf0;
+  --color-orange: #ff6900;
+  --color-orange-1: #fd7e14;
+  --color-orange-2: #fcb900;
+  --color-golden-yellow: #ffc107;
+  --color-dim-gray: #666666;
+  --color-slate-gray: #6c757d;
+  --color-lime-green: #25d366;
+  --color-light-sea-green: #20c997;
+  --color-spring-green: #00d084;
+  --color-dark-slate-gray: #455a64;
+  --color-forest-green: #198754;
+  --color-charcoal: #343a40;
+  --color-midnight-blue: #2a0753;
+  --color-midnight-blue-1: #192155;
+  --color-navy: #020381;
+  --color-dark-gray: #212529;
+  --color-black: #000000;
+
+  /* Brand aliases consumed by design-system components */
+  --epicode-primary-50: #fde9f7;
+  --epicode-primary-100: #f7c6e8;
+  --epicode-primary-200: #ee99d5;
+  --epicode-primary-300: #e46cc2;
+  --epicode-primary-400: #d84ead;
+  --epicode-primary-500: #d63384;
+  --epicode-primary-600: #b02173;
+  --epicode-primary-700: #842257;
+
+  --epicode-ink-950: #0a0b16;
+  --epicode-ink-900: #0f1326;
+  --epicode-ink-800: #151a32;
+
+  --epicode-surface-0: #0c0f1d;
+  --epicode-surface-50: #101428;
+  --epicode-surface-100: #141938;
+  --epicode-surface-200: #1b2342;
+
+  --epicode-text-900: #f0f1f3;
+  --epicode-text-700: #b3b9c9;
+  --epicode-text-500: #8f97ad;
+
+  --epicode-success: #22c55e;
+  --epicode-warning: #fcb900;
+  --epicode-danger: #ef4444;
+  --epicode-info: #60a5fa;
+  --epicode-primary-foreground: var(--color-white);
+
+  /* Dark semantic tokens (default) */
+  --epicode-border: #273052;
+  --epicode-background: #0c0f1d;
+  --epicode-foreground: #f4f5fb;
+  --epicode-card: #10142b;
+  --epicode-card-foreground: #f4f5fb;
+  --epicode-muted: #121833;
+  --epicode-muted-foreground: #a2aac0;
+  --epicode-accent: #472d68;
+  --epicode-accent-foreground: var(--color-white);
+
+  --epicode-sidebar-bg: #0c0f1d;
+  --epicode-sidebar-fg: #f4f5fb;
+  --epicode-sidebar-accent: #472d68;
+  --epicode-sidebar-accent-fg: var(--color-white);
+  --epicode-sidebar-border: #2a3254;
+}
+
+/* Light theme override */
+.light,
+[data-theme="light"] {
+  --epicode-border: var(--color-gainsboro);
+  --epicode-background: var(--color-ghost-white);
+  --epicode-foreground: var(--color-dark-gray);
+  --epicode-card: var(--color-white);
+  --epicode-card-foreground: var(--color-dark-gray);
+  --epicode-muted: var(--color-white-smoke-1);
+  --epicode-muted-foreground: var(--color-slate-gray);
+  --epicode-accent: var(--epicode-primary-50);
+  --epicode-accent-foreground: var(--color-dark-gray);
+
+  --epicode-sidebar-bg: var(--color-white);
+  --epicode-sidebar-fg: var(--color-dark-gray);
+  --epicode-sidebar-accent: var(--epicode-primary-50);
+  --epicode-sidebar-accent-fg: var(--color-dark-gray);
+  --epicode-sidebar-border: var(--color-gainsboro);
+}
+
+/* Explicit dark hook for theme switchers using class/data-attr */
+.dark,
+[data-theme="dark"] {
+  --epicode-border: #273052;
+  --epicode-background: #0c0f1d;
+  --epicode-foreground: #f4f5fb;
+  --epicode-card: #10142b;
+  --epicode-card-foreground: #f4f5fb;
+  --epicode-muted: #121833;
+  --epicode-muted-foreground: #a2aac0;
+  --epicode-accent: #472d68;
+  --epicode-accent-foreground: var(--color-white);
+
+  --epicode-sidebar-bg: #0c0f1d;
+  --epicode-sidebar-fg: #f4f5fb;
+  --epicode-sidebar-accent: #472d68;
+  --epicode-sidebar-accent-fg: var(--color-white);
+  --epicode-sidebar-border: #2a3254;
+}
