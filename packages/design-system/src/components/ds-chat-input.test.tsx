@@ -12,7 +12,9 @@ describe("DsChatInput", () => {
     );
 
     expect(screen.getByLabelText("Message")).toBeInTheDocument();
-    expect(screen.getByText("Press Enter on send to post your message.")).toBeInTheDocument();
+    expect(
+      screen.getByText("Press Enter on send to post your message.")
+    ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Send" })).toBeInTheDocument();
   });
 

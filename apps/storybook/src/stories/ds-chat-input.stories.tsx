@@ -5,7 +5,12 @@ import {
 } from "@workspace/design-system";
 
 const attachmentsPreview: DsChatInputAttachment[] = [
-  { id: "a1", name: "lesson-notes.pdf", size: 248_000, type: "application/pdf" },
+  {
+    id: "a1",
+    name: "lesson-notes.pdf",
+    size: 248_000,
+    type: "application/pdf",
+  },
   { id: "a2", name: "dataset.csv", size: 82_340, type: "text/csv" },
 ];
 

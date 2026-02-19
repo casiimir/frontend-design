@@ -18,11 +18,11 @@ const dsTooltipContentVariants = cva(
       },
       tone: {
         neutral:
-          "border-epicode-border bg-epicode-surface text-epicode-foreground [&>svg]:!bg-epicode-surface [&>svg]:!fill-epicode-surface",
+          "[&>svg]:!bg-epicode-surface [&>svg]:!fill-epicode-surface border-epicode-border bg-epicode-surface text-epicode-foreground",
         brand:
-          "border-epicode-primary/70 bg-epicode-primary text-epicode-primary-foreground [&>svg]:!bg-epicode-primary [&>svg]:!fill-epicode-primary",
+          "[&>svg]:!bg-epicode-primary [&>svg]:!fill-epicode-primary border-epicode-primary/70 bg-epicode-primary text-epicode-primary-foreground",
         inverse:
-          "border-epicode-foreground/70 bg-epicode-foreground text-epicode-surface [&>svg]:!bg-epicode-foreground [&>svg]:!fill-epicode-foreground",
+          "[&>svg]:!bg-epicode-foreground [&>svg]:!fill-epicode-foreground border-epicode-foreground/70 bg-epicode-foreground text-epicode-surface",
       },
     },
     defaultVariants: {
@@ -33,7 +33,9 @@ const dsTooltipContentVariants = cva(
 );
 
 type PrimitiveTooltipProps = React.ComponentProps<typeof Tooltip>;
-type PrimitiveTooltipProviderProps = React.ComponentProps<typeof TooltipProvider>;
+type PrimitiveTooltipProviderProps = React.ComponentProps<
+  typeof TooltipProvider
+>;
 type PrimitiveTooltipTriggerProps = React.ComponentProps<typeof TooltipTrigger>;
 type PrimitiveTooltipContentProps = React.ComponentProps<typeof TooltipContent>;
 
@@ -83,10 +85,5 @@ function DsTooltipContent({
   );
 }
 
-export {
-  DsTooltip,
-  DsTooltipContent,
-  DsTooltipProvider,
-  DsTooltipTrigger,
-};
+export { DsTooltip, DsTooltipContent, DsTooltipProvider, DsTooltipTrigger };
 export default DsTooltip;

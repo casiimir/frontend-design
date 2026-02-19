@@ -92,7 +92,7 @@ function TreeItemStatusBadge({ status }: { status: DsTreeItemStatus }) {
   return (
     <span
       className={cn(
-        "inline-flex h-4 shrink-0 items-center rounded-sm border px-1.5 font-sans text-[9px] font-semibold uppercase tracking-[0.09em]",
+        "inline-flex h-4 shrink-0 items-center rounded-sm border px-1.5 font-sans font-semibold text-[9px] uppercase tracking-[0.09em]",
         meta.className
       )}
       data-slot="ds-tree-item-status"
@@ -158,7 +158,9 @@ function DsTreeItem({
             )}
             <div className="flex min-w-0 flex-1 items-center gap-2">
               <span className="truncate">{item.label}</span>
-              {item.status ? <TreeItemStatusBadge status={item.status} /> : null}
+              {item.status ? (
+                <TreeItemStatusBadge status={item.status} />
+              ) : null}
             </div>
           </SidebarMenuButton>
         </CollapsibleTrigger>

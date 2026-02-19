@@ -8,9 +8,15 @@ import {
 } from "./ds-tooltip";
 
 class ResizeObserverMock {
-  disconnect() {}
-  observe() {}
-  unobserve() {}
+  disconnect() {
+    // empty
+  }
+  observe() {
+    // empty
+  }
+  unobserve() {
+    // empty
+  }
 }
 
 describe("DsTooltip", () => {
@@ -62,7 +68,9 @@ describe("DsTooltip", () => {
       expect(onOpenChange).toHaveBeenCalled();
     });
 
-    expect(onOpenChange.mock.calls.some(([value]) => value === true)).toBe(true);
+    expect(onOpenChange.mock.calls.some(([value]) => value === true)).toBe(
+      true
+    );
   });
 
   it("applies branded tone styles", () => {

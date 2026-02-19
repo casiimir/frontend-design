@@ -71,20 +71,20 @@ export const Conversation: Story = {
       <DsChatBubble
         avatar={<DsAvatar fallback="AI" showStatus={false} size="sm" />}
         message="Benvenuto! Vuoi ripassare la lezione Dati 1?"
-        variant="assistant"
         timestamp="10:40"
+        variant="assistant"
       />
       <DsChatBubble
         avatar={<DsAvatar fallback="MR" showStatus={false} size="sm" />}
         message="Sì, concentrati su metriche e dashboard."
-        variant="user"
         timestamp="10:41"
+        variant="user"
       />
       <DsChatBubble
         avatar={<DsAvatar fallback="AI" showStatus={false} size="sm" />}
         message="Perfetto. Le 3 metriche chiave sono: conversion rate, retention e churn."
-        variant="assistant"
         timestamp="10:42"
+        variant="assistant"
       />
     </div>
   ),

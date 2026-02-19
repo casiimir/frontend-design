@@ -73,8 +73,8 @@ export interface DsChatInputProps
   onValueChange?: (nextValue: string) => void;
   placeholder?: string;
   rows?: number;
-  sendLabel?: React.ReactNode;
   sending?: boolean;
+  sendLabel?: React.ReactNode;
   textareaClassName?: string;
   textareaLabel?: React.ReactNode;
   value?: string;
@@ -142,8 +142,7 @@ function DsChatInput({
   >([]);
   const resolvedAttachments = attachments ?? internalAttachments;
   const canSubmit =
-    !disabled &&
-    !sending &&
+    !(disabled || sending) &&
     (message.trim().length > 0 || resolvedAttachments.length > 0);
 
   function updateMessage(nextValue: string) {
@@ -179,7 +178,7 @@ function DsChatInput({
     }
 
     event.preventDefault();
-    if (!canSubmit || !onSend) {
+    if (!(canSubmit && onSend)) {
       return;
     }
 
@@ -234,7 +233,7 @@ function DsChatInput({
               <PaperclipIcon aria-hidden="true" className="size-3.5" />
               <span className="max-w-48 truncate">{attachment.name}</span>
               {typeof attachment.size === "number" ? (
-                <span className="text-epicode-muted-foreground text-[11px]">
+                <span className="text-[11px] text-epicode-muted-foreground">
                   {formatFileSize(attachment.size)}
                 </span>
               ) : null}

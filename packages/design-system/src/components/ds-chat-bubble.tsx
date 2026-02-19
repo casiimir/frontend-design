@@ -19,8 +19,7 @@ const dsChatBubbleCardVariants = cva(
   {
     variants: {
       variant: {
-        user:
-          "rounded-br-md border-epicode-primary/55 bg-epicode-primary text-epicode-primary-foreground",
+        user: "rounded-br-md border-epicode-primary/55 bg-epicode-primary text-epicode-primary-foreground",
         assistant:
           "rounded-bl-md border-epicode-border bg-epicode-surface text-epicode-foreground",
       },
@@ -51,9 +50,12 @@ function DsChatBubble({
 
   return (
     <div
-      className={cn(dsChatBubbleVariants({ variant: resolvedVariant }), className)}
-      data-variant={resolvedVariant}
+      className={cn(
+        dsChatBubbleVariants({ variant: resolvedVariant }),
+        className
+      )}
       data-slot="ds-chat-bubble"
+      data-variant={resolvedVariant}
       {...props}
     >
       <div
@@ -66,7 +68,9 @@ function DsChatBubble({
         <div
           className={cn(dsChatBubbleCardVariants({ variant: resolvedVariant }))}
         >
-          <p className="whitespace-pre-wrap text-sm leading-relaxed">{message}</p>
+          <p className="whitespace-pre-wrap text-sm leading-relaxed">
+            {message}
+          </p>
           {timestamp ? (
             <span
               className={cn(

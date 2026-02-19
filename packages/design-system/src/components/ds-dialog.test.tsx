@@ -75,7 +75,9 @@ describe("DsDialog", () => {
         <DsDialogContent>
           <DsDialogHeader>
             <DsDialogTitle>Confirm action</DsDialogTitle>
-            <DsDialogDescription>Choose an action to continue.</DsDialogDescription>
+            <DsDialogDescription>
+              Choose an action to continue.
+            </DsDialogDescription>
           </DsDialogHeader>
           <DsDialogFooter>
             <DsButton variant="secondary">Cancel</DsButton>
