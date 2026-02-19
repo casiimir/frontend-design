@@ -1,25 +1,25 @@
 export type LessonType = "video" | "article" | "quiz";
 export type LessonStatus = "completed" | "in-progress" | "locked";
 
-export type Lesson = {
+export interface Lesson {
   content?: string;
   id: string;
   status: LessonStatus;
   title: string;
   type: LessonType;
-};
+}
 
-export type Module = {
+export interface Module {
   id: string;
   lessons: Lesson[];
   title: string;
-};
+}
 
-export type Course = {
+export interface Course {
   id: string;
   modules: Module[];
   title: string;
-};
+}
 
 export const mockCourse: Course = {
   id: "course-data-analytics-ai",
@@ -50,7 +50,8 @@ export const mockCourse: Course = {
           title: "3. Analisi dati",
           type: "video",
           status: "completed",
-          content: "Metodo di analisi esplorativa, ipotesi e verifica dei risultati.",
+          content:
+            "Metodo di analisi esplorativa, ipotesi e verifica dei risultati.",
         },
         {
           id: "m0-lesson-dati-1",
@@ -87,26 +88,28 @@ export const mockCourse: Course = {
           title: "3. Data quality checkpoint",
           type: "quiz",
           status: "locked",
-          content: "Verifica su quality checks, validazione e pulizia dei dataset.",
+          content:
+            "Verifica su quality checks, validazione e pulizia dei dataset.",
         },
         {
           id: "m1-lesson-reporting-quiz",
           title: "4. Reporting quiz",
           type: "quiz",
           status: "locked",
-          content: "Quiz finale su reporting, insight e presentazione dei risultati.",
+          content:
+            "Quiz finale su reporting, insight e presentazione dei risultati.",
         },
       ],
     },
   ],
 };
 
-export type ChatMessage = {
+export interface ChatMessage {
   id: string;
   message: string;
   timestamp: string;
   variant: "assistant" | "user";
-};
+}
 
 export const mockChatMessages: ChatMessage[] = [
   {
