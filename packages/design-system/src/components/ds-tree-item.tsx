@@ -31,6 +31,32 @@ export interface DsTreeItemProps {
   onItemSelect?: (item: DsTreeNode) => void;
 }
 
+const TREE_STATUS_META: Record<
+  DsTreeItemStatus,
+  { className: string; label: string }
+> = {
+  completed: {
+    label: "Done",
+    className:
+      "border-emerald-400/35 bg-emerald-500/10 text-emerald-200/95 dark:border-emerald-400/35 dark:bg-emerald-500/10 dark:text-emerald-200/95",
+  },
+  "in-progress": {
+    label: "Now",
+    className:
+      "border-epicode-primary/45 bg-epicode-primary/15 text-epicode-foreground",
+  },
+  locked: {
+    label: "Lock",
+    className:
+      "border-sidebar-border bg-sidebar-accent/35 text-sidebar-foreground/70",
+  },
+  new: {
+    label: "New",
+    className:
+      "border-sky-400/35 bg-sky-400/10 text-sky-100 dark:border-sky-400/35 dark:bg-sky-400/10 dark:text-sky-100",
+  },
+};
+
 function hasDescendant(node: DsTreeNode, id?: string): boolean {
   if (!(id && node.children?.length)) {
     return false;
@@ -57,6 +83,22 @@ function getDefaultIconClass(depth: number) {
   return cn(
     "size-3.5",
     depth === 0 ? "text-sidebar-foreground/75" : "text-sidebar-foreground/65"
+  );
+}
+
+function TreeItemStatusBadge({ status }: { status: DsTreeItemStatus }) {
+  const meta = TREE_STATUS_META[status];
+
+  return (
+    <span
+      className={cn(
+        "inline-flex h-4 shrink-0 items-center rounded-sm border px-1.5 font-sans text-[9px] font-semibold uppercase tracking-[0.09em]",
+        meta.className
+      )}
+      data-slot="ds-tree-item-status"
+    >
+      {meta.label}
+    </span>
   );
 }
 
@@ -87,7 +129,10 @@ function DsTreeItem({
           {item.icon ?? (
             <Icon aria-hidden="true" className={getDefaultIconClass(depth)} />
           )}
-          <span>{item.label}</span>
+          <div className="flex min-w-0 flex-1 items-center gap-2">
+            <span className="truncate">{item.label}</span>
+            {item.status ? <TreeItemStatusBadge status={item.status} /> : null}
+          </div>
         </SidebarMenuButton>
       </SidebarMenuItem>
     );
@@ -106,12 +151,15 @@ function DsTreeItem({
           >
             <ChevronRightIcon
               aria-hidden="true"
-              className="size-3.5 text-sidebar-foreground/55 transition-transform duration-150 group-data-[state=open]/ds-tree-item:rotate-90"
+              className="size-3.5 text-sidebar-foreground/55 transition-transform duration-150 group-data-[state=open]/menu-button:rotate-90"
             />
             {item.icon ?? (
               <Icon aria-hidden="true" className={getDefaultIconClass(depth)} />
             )}
-            <span>{item.label}</span>
+            <div className="flex min-w-0 flex-1 items-center gap-2">
+              <span className="truncate">{item.label}</span>
+              {item.status ? <TreeItemStatusBadge status={item.status} /> : null}
+            </div>
           </SidebarMenuButton>
         </CollapsibleTrigger>
         <CollapsibleContent
