@@ -286,7 +286,7 @@ function MainToolbar({
   onLocaleChange,
 }: MainToolbarProps) {
   return (
-    <header className="flex flex-wrap items-center justify-between gap-3">
+    <header className="flex flex-wrap items-center justify-between gap-4">
       <div className="relative w-full max-w-md">
         <SearchIcon className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-epicode-muted-foreground" />
         <DsInput
@@ -300,7 +300,7 @@ function MainToolbar({
         </span>
       </div>
 
-      <div className="flex items-center gap-1.5">
+      <div className="flex items-center gap-2">
         <LocaleSwitcher
           currentLocale={currentLocale}
           onChange={onLocaleChange}
@@ -346,14 +346,14 @@ function LessonMeta({
 }: LessonMetaProps) {
   return (
     <>
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg bg-epicode-ink/35 px-3 py-2.5">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="min-w-0">
-          <p className="truncate font-medium text-epicode-foreground/95 text-sm">
+          <p className="truncate font-medium text-epicode-foreground/88 text-xs sm:text-sm">
             {breadcrumb}
           </p>
         </div>
 
-        <div className="w-full min-w-[180px] max-w-[240px]">
+        <div className="w-full min-w-[170px] max-w-[210px]">
           <DsProgress
             label={progressLabel}
             showPercentage={false}
@@ -364,20 +364,20 @@ function LessonMeta({
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="mt-6 mb-2 font-display font-semibold text-[2.5rem] leading-none tracking-tight">
+      <div className="mt-1 flex flex-wrap items-center justify-between gap-3">
+        <h1 className="font-display font-semibold text-[2.45rem] leading-[0.98] tracking-tight md:text-[2.7rem]">
           {lessonTitle}
         </h1>
         <DsBadge status={activeLessonStatus} />
       </div>
 
       <DsCard
-        className="overflow-hidden border-0 bg-transparent shadow-none ring-0"
-        contentClassName="space-y-4"
+        className="overflow-hidden border-0"
+        contentClassName="space-y-5"
         variant="lesson"
       >
-        <div className="relative overflow-hidden bg-[#141b43] p-6 md:p-10">
-          <div className="relative flex min-h-[240px] flex-col justify-between md:min-h-[370px]">
+        <div className="relative overflow-hidden bg-[#141b43] p-7 md:p-10">
+          <div className="relative flex min-h-[240px] flex-col justify-between md:min-h-[360px]">
             <div className="flex items-center justify-between gap-3">
               <div className="inline-flex items-center gap-3 rounded-sm bg-transparent px-1 py-0.5 text-white" />
               <div className="inline-flex h-9 items-center rounded-md border border-white/35 bg-white px-4 font-medium text-[13px] text-epicode-ink">
@@ -391,7 +391,7 @@ function LessonMeta({
           </div>
         </div>
 
-        <article className="space-y-3 text-epicode-muted-foreground text-sm leading-7">
+        <article className="space-y-3.5 text-epicode-muted-foreground text-sm leading-7">
           {lessonBody.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -419,7 +419,7 @@ function LessonNavigation({
   showPrevious,
 }: LessonNavigationProps) {
   return (
-    <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-1">
+    <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-4">
       <DsButton
         disabled={!showPrevious}
         icon={<ChevronLeftIcon className="size-4" />}
@@ -462,13 +462,13 @@ function ChatSidebarPanel({
     <aside
       className={[
         "sticky top-0 hidden h-full shrink-0 overflow-hidden border-epicode-sidebar-border/95 border-l bg-epicode-sidebar-bg transition-[width] duration-300 ease-out xl:flex xl:flex-col",
-        chatPanelOpen ? "w-[286px]" : "w-10",
+        chatPanelOpen ? "w-[292px]" : "w-10",
       ].join(" ")}
     >
       {chatPanelOpen ? (
         <>
-          <header className="flex items-center justify-between border-epicode-sidebar-border/90 border-b px-3 py-3">
-            <div className="flex items-center gap-2 font-display font-semibold text-sm tracking-tight">
+          <header className="flex items-center justify-between border-epicode-sidebar-border/90 border-b px-4 py-3">
+            <div className="flex items-center gap-2 font-semibold text-sm tracking-tight">
               <MessageSquareIcon className="size-4 text-epicode-primary" />
               <span>{dictionary.commentsLabel}</span>
             </div>
@@ -481,7 +481,7 @@ function ChatSidebarPanel({
             />
           </header>
 
-          <div className="flex-1 space-y-2 overflow-y-auto px-3 py-3">
+          <div className="flex-1 space-y-2 overflow-y-auto px-4 py-3">
             {chatMessages.map((chatMessage) => (
               <DsChatBubble
                 avatar={
@@ -504,16 +504,16 @@ function ChatSidebarPanel({
             ))}
           </div>
 
-          <div className="border-epicode-sidebar-border/90 border-t p-3">
+          <div className="border-epicode-sidebar-border/90 border-t p-4">
             <DsChatInput
               allowAttachments={false}
-              className="rounded-lg border-none bg-transparent p-3 shadow-none"
+              className="rounded-lg border-none bg-transparent p-0 shadow-none"
               onSend={onSend}
               placeholder={dictionary.submitCommentPlaceholder}
               rows={6}
               sendLabel={dictionary.sendLabel}
               size="sm"
-              textareaClassName="min-h-[148px] rounded-lg border-epicode-border/80 bg-epicode-ink/35"
+              textareaClassName="min-h-[132px] rounded-lg border-epicode-border/80 bg-epicode-ink/35"
             />
           </div>
         </>
@@ -720,7 +720,7 @@ export function LmsScreen({ locale: rawLocale = "it" }: { locale?: string }) {
   }
 
   return (
-    <div className="h-svh overflow-hidden bg-[linear-gradient(180deg,#060919_0%,#070c1f_40%,#050716_100%)] text-epicode-foreground">
+    <div className="h-svh overflow-hidden bg-[linear-gradient(180deg,#060919_0%,#070c1f_40%,#050716_100%)] font-sans text-epicode-foreground">
       <div className="flex h-full">
         <DsSidebar
           activeItemId={activeLesson.id}
@@ -730,16 +730,16 @@ export function LmsScreen({ locale: rawLocale = "it" }: { locale?: string }) {
           providerClassName="w-auto shrink-0"
           providerStyle={
             {
-              "--sidebar-width": "18.4rem",
-              "--sidebar-width-icon": "4rem",
+              "--sidebar-width": "16.5rem",
+              "--sidebar-width-icon": "3.75rem",
             } as CSSProperties
           }
           title={course.title}
         />
 
         <div className="flex min-w-0 flex-1">
-          <main className="flex h-full min-w-0 flex-1 overflow-y-auto bg-epicode-ink px-4 py-5 md:px-8 md:py-2">
-            <div className="mx-4 flex w-full flex-1 flex-col gap-4">
+          <main className="flex h-full min-w-0 flex-1 overflow-y-auto bg-epicode-ink px-5 py-4 md:px-8 md:py-5">
+            <div className="mx-auto flex w-full max-w-[1600px] flex-1 flex-col gap-5">
               <MainToolbar
                 currentLocale={locale}
                 dictionary={dictionary}

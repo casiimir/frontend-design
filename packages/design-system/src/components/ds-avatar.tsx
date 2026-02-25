@@ -82,7 +82,7 @@ function DsAvatar({
     >
       {src ? <AvatarImage alt={altText} src={src} /> : null}
       <AvatarFallback
-        className="bg-epicode-primary/20 font-display font-semibold text-epicode-primary uppercase tracking-tight"
+        className="bg-epicode-primary/20 font-sans font-semibold text-epicode-primary uppercase tracking-tight"
         data-slot="ds-avatar-fallback"
       >
         {fallbackLabel}

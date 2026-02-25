@@ -2,7 +2,6 @@
   /* Font families */
   --font-inter: "Inter", sans-serif;
   --font-outfit: "Outfit", sans-serif;
-  --font-apple-system: -apple-system, sans-serif;
 
   /* Font sizes */
   --text-14: 14px;
@@ -48,8 +47,7 @@
   /* Design-system aliases consumed by Tailwind theme mapping */
   --epicode-font-sans: var(--font-inter);
   --epicode-font-display: var(--font-outfit);
-  --epicode-font-mono:
-    "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --epicode-font-mono: var(--font-inter);
 
   --epicode-text-xs: var(--text-14);
   --epicode-text-sm: var(--text-16);
