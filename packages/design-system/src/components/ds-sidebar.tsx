@@ -162,7 +162,7 @@ function DsSidebar({
     >
       <Sidebar
         className={cn(
-          "border-sidebar-border/90 bg-sidebar font-display text-sidebar-foreground",
+          "border-sidebar-border/90 bg-sidebar font-sans text-sidebar-foreground",
           className
         )}
         collapsible={collapsible}
@@ -170,21 +170,21 @@ function DsSidebar({
         variant={variant}
       >
         <div className="relative flex h-full flex-col">
-          <SidebarHeader className="border-sidebar-border/90 px-4 pt-5 pb-8">
+          <SidebarHeader className="border-sidebar-border/90 px-4 pt-4 pb-6">
             <div className="flex items-center justify-between gap-2">
               <div className="flex min-w-0 items-center gap-3">
                 <span className="shrink-0">{resolvedBrandIcon}</span>
-                <h2 className="truncate font-semibold text-[1.03rem] tracking-tight">
+                <h2 className="truncate font-display font-semibold text-[1.03rem] tracking-tight">
                   {title}
                 </h2>
               </div>
               {headerEnd}
             </div>
           </SidebarHeader>
-          <SidebarContent className={cn("px-2.5 py-3", contentClassName)}>
+          <SidebarContent className={cn("px-2 py-2.5", contentClassName)}>
             <SidebarGroup className="p-0">
               <SidebarGroupContent>
-                <SidebarMenu className="gap-0.5">
+                <SidebarMenu className="gap-1">
                   {items.map((item) => (
                     <DsTreeItem
                       activeItemId={resolvedActiveItemId}
@@ -206,7 +206,7 @@ function DsSidebar({
           {showCollapseTrigger && collapsible !== "none" ? (
             <DsSidebarTrigger
               className={cn(
-                "absolute top-[5.8rem] z-30 -translate-y-1/2 rounded-full bg-sidebar/95 text-sidebar-foreground/60 shadow-sm",
+                "absolute top-[5.15rem] z-30 -translate-y-1/2 rounded-full bg-sidebar/95 text-sidebar-foreground/60 shadow-sm",
                 side === "left" ? "-right-3.5" : "-left-3.5"
               )}
               side={side}

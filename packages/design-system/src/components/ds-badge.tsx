@@ -12,7 +12,7 @@ const STATUS_LABELS: Record<DsBadgeStatus, string> = {
   new: "New",
 };
 
-const dsBadgeVariants = cva("font-display font-medium tracking-tight", {
+const dsBadgeVariants = cva("font-medium font-sans tracking-tight", {
   variants: {
     status: {
       completed:

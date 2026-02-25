@@ -69,12 +69,12 @@ function hasDescendant(node: DsTreeNode, id?: string): boolean {
 
 function getTreeItemButtonClass(depth: number) {
   return cn(
-    "h-9 rounded-md px-2.5 text-left text-[14px] leading-none transition-colors",
-    "!bg-transparent hover:!bg-transparent active:!bg-transparent font-display text-sidebar-foreground/88 hover:text-sidebar-foreground",
+    "h-[34px] rounded-md px-2.5 text-left leading-none transition-colors",
+    "!bg-transparent hover:!bg-transparent active:!bg-transparent font-sans text-sidebar-foreground/88 hover:text-sidebar-foreground",
     "data-[active=true]:!bg-sidebar-accent data-[active=true]:hover:!bg-sidebar-accent data-[active=true]:text-sidebar-foreground",
     depth === 0
       ? "font-semibold text-[14px] text-sidebar-foreground/96"
-      : "font-medium text-[13.5px]",
+      : "font-medium text-[13px]",
     depth >= 2 ? "text-sidebar-foreground/82" : undefined
   );
 }
@@ -168,7 +168,7 @@ function DsTreeItem({
           className="mt-0.5"
           data-slot="ds-tree-item-children"
         >
-          <SidebarMenuSub className="ml-4 border-sidebar-border/75 py-0.5 pl-3">
+          <SidebarMenuSub className="ml-3.5 border-sidebar-border/75 py-0.5 pl-2.5">
             {children.map((child) => (
               <DsTreeItem
                 activeItemId={activeItemId}
